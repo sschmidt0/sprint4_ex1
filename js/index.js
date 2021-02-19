@@ -37,6 +37,7 @@ const handleSearch = () => {
   if (searchInput.value == '') {
     searchInput.classList.add('is-invalid');
     document.getElementById("errorSearch").textContent = "Introdueix una paraula per cercar";
+    searchInput.value="No has res per cercar"
     error = true;
   } else if (searchInput.value.length < 3) {
     searchInput.classList.add('is-invalid');
@@ -55,16 +56,19 @@ const handleSubmitLogin = () => {
   if (emailLogin.value == '') {
     emailLogin.classList.add('is-invalid');
     document.getElementById('errorEmailLogin').innerHTML = "Introdueix el correu electrònic";
+    emailLogin.value="cap correu";
     errors = true;
   } else if (!validar_email(emailLogin.value)) {
     emailLogin.classList.add('is-invalid');
     document.getElementById('errorEmailLogin').innerHTML = "El correu no és vàlid";
+    emailLogin.value="correu invàlid";
     errors = true;
   }
 
   if (passwordLogin.value == '') {
     passwordLogin.classList.add('is-invalid');
     document.getElementById('errorPasswordLogin').innerHTML = "Introdueix la paraula de pas";
+    passwordLogin.value="cap paraula de pas";
     errors = true;
   }
 
@@ -81,50 +85,60 @@ const handleSubmitRegister = () => {
   if (firstName.value == '') {
     firstName.classList.add('is-invalid');
     document.getElementById('errorFirstname').textContent = "Introdueix un nom";
+    firstName.value="cap nom";
     errors = true;
   }
 
   if (surname.value == '') {
     surname.classList.add('is-invalid');
     document.getElementById('errorSurname').textContent = "Introdueix almenys un cognom";
+    surname.value="cap cognom";
     errors = true;
   }
 
   if (emailRegister.value == '') {
     emailRegister.classList.add('is-invalid');
     document.getElementById('errorEmailRegister').textContent = "Introdueix un correu electrònic";
+    emailRegister.value="cap correu";
     errors = true;
   } else if (!validar_email(emailRegister.value)) {
     emailRegister.classList.add('is-invalid');
     document.getElementById('errorEmailRegister').textContent = "El correu no és vàlid";
+    emailRegister.value="correu invàlid";
     errors = true;
   }
 
   if (passwordRegister.value == '') {
     passwordRegister.classList.add('is-invalid');
     document.getElementById('errorPasswordRegister').textContent = "Introdueix una paraula de pas";
+    passwordRegister.value="cap paraula de pas";
     errors = true;
   } else if (passwordRegister.value.length < 8) {
     passwordRegister.classList.add('is-invalid');
     document.getElementById('errorPasswordRegister').textContent = "La paraula de pas ha de tenir almenys 8 caràcters";
+    passwordRegister.value="massa curta";
     errors = true;
   } else if (!hasNumber(passwordRegister.value)) {
     passwordRegister.classList.add('is-invalid');
     document.getElementById('errorPasswordRegister').textContent = "La paraula de pas ha de tenir almenys 1 nombre";
+    passwordRegister.value="cap nombre";
     errors = true;
   } else if (!hasMajuscule(passwordRegister.value)) {
     passwordRegister.classList.add('is-invalid');
     document.getElementById('errorPasswordRegister').textContent = "La paraula de pas ha de tenir almenys una majúscula";
+    passwordRegister.value="cap majúscula";
     errors = true;
   }
 
   if (passwordRegister2.value !== passwordRegister.value) {
     passwordRegister2.classList.add('is-invalid');
     document.getElementById('errorPasswordRegister2').textContent = "Les paraules de pas no coincideixen";
+    passwordRegister2.value="cap paraula de pas";
     errors = true;
   } else if (passwordRegister2.value == '') {
     passwordRegister2.classList.add('is-invalid');
     document.getElementById('errorPasswordRegister2').textContent = "Confirma la paraula de pas";
+    passwordRegister2.value="les paraules de pas no coincideixen"
     errors = true;
   }
 
