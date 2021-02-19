@@ -6,6 +6,7 @@ const surname = document.getElementById('surname');
 const emailRegister = document.getElementById('email');
 const passwordRegister = document.getElementById('password');
 const passwordRegister2 = document.getElementById('password2');
+const province = document.getElementById('province');
 
 const searchForm = document.getElementById('searchForm');
 const loginForm = document.getElementById('loginForm');
@@ -95,6 +96,12 @@ const handleSubmitRegister = () => {
   } else if (passwordRegister2.value == '') {
     passwordRegister2.classList.add('is-invalid');
     document.getElementById('errorPasswordRegister2').textContent = "Confirma la paraula de pas";
+    errors = true;
+  }
+
+  if (province.value == '') {
+    province.classList.add('is-invalid');
+    document.getElementById('errorProvince').textContent = "Selecciona una província";
     errors = true;
   }
 
